@@ -15,8 +15,9 @@ use std::path::Path;
 /// Errors if the directory cannot be read. Any invalid files will be skipped.
 ///
 /// # Example
-/// ```
-/// println!(rerun_in_except("frontend", &["frontend/node_modules", "frontend/artifacts"]).unwrap())
+/// ```ignore
+/// # use rerun_in_except::rerun_in_except;
+/// println!("{}", rerun_in_except("./frontend", &["./frontend/node_modules", "./frontend/artifacts"]).unwrap())
 /// ```
 pub fn rerun_in_except(
     run_in: impl AsRef<Path>,
@@ -47,17 +48,24 @@ mod tests {
                     concat!(env!("CARGO_MANIFEST_DIR"), "/Cargo.toml"),
                     concat!(env!("CARGO_MANIFEST_DIR"), "/Cargo.lock"),
                     concat!(env!("CARGO_MANIFEST_DIR"), "/.git"),
+                    concat!(env!("CARGO_MANIFEST_DIR"), "/LICENSE_APACHE"),
+                    concat!(env!("CARGO_MANIFEST_DIR"), "/LICENSE_MIT"),
                 ],
             )
             .unwrap(),
             concat!(
                 "cargo:rerun-if-changed=",
                 env!("CARGO_MANIFEST_DIR"),
-                "/target\ncargo:rerun-if-changed=",
+                "/target\n",
+                "cargo:rerun-if-changed=",
                 env!("CARGO_MANIFEST_DIR"),
-                "/.gitignore\ncargo:rerun-if-changed=",
+                "/README.md\n",
+                "cargo:rerun-if-changed=",
                 env!("CARGO_MANIFEST_DIR"),
-                "/src\n"
+                "/.gitignore\n",
+                "cargo:rerun-if-changed=",
+                env!("CARGO_MANIFEST_DIR"),
+                "/src\n",
             )
         );
     }

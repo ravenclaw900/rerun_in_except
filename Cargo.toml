@@ -1,6 +1,6 @@
 [package]
 name = "rerun_in_except"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["ravenclaw900"]
 description = "Rerun build script if files in a directory have changed, excluding listed ones"
