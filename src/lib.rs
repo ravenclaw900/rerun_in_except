@@ -16,7 +16,7 @@ use std::path::Path;
 ///
 /// # Example
 /// ```
-/// println!(rerun_in_except("frontend", &["frontend/node_modules", "frontend/artifacts"]))
+/// println!(rerun_in_except("frontend", &["frontend/node_modules", "frontend/artifacts"]).unwrap())
 /// ```
 pub fn rerun_in_except(
     run_in: impl AsRef<Path>,
