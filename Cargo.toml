@@ -3,6 +3,6 @@ name = "rerun_in_except"
 version = "0.1.0"
 edition = "2021"
 authors = ["ravenclaw900"]
-description = "Rerun a build script if files in a directory have changed, excluding listed ones"
+description = "Rerun build script if files in a directory have changed, excluding listed ones"
 repository = "https://github.com/ravenclaw900/rerun_in_except/"
 keywords = ["rerun", "except", "build.rs"]

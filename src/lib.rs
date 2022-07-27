@@ -3,7 +3,7 @@
 #![warn(clippy::pedantic)]
 use std::path::Path;
 
-/// Rerun if files in folder are changed, excluding listed
+/// Return cargo rerun-if-changed lines to rerun build script if files in folder are changed, excluding listed
 ///
 /// Takes the directory to check, and a slice of files under that directory to exclude. Returns a string in the format:
 /// ```text
