@@ -4,5 +4,5 @@ Lets you rerun a build script if files in a directory have changed, excluding sp
 
 Example:
 ```rust
-println!(rerun_in_except("frontend", &["frontend/node_modules", "frontend/artifacts"]))
+println!(rerun_in_except("frontend", &["frontend/node_modules", "frontend/artifacts"]).unwrap())
 ```
