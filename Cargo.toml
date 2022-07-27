@@ -6,3 +6,4 @@ authors = ["ravenclaw900"]
 description = "Rerun build script if files in a directory have changed, excluding listed ones"
 repository = "https://github.com/ravenclaw900/rerun_in_except/"
 keywords = ["rerun", "except", "build.rs"]
+license = "MIT OR Apache-2.0"
